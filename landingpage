@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YouFit - O seu marketplace de fitness</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00a99d",
+                        "background-light": "#f0f7f7",
+                        "background-dark": "#0d1f23",
+                        "text-light": "#051316",
+                        "text-dark": "#e1f4f4",
+                        "subtle-light": "#467b86",
+                        "subtle-dark": "#b0d2d8",
+                        "border-light": "#c0e0e5",
+                        "border-dark": "#315b63",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex justify-center border-b border-border-light/80 dark:border-border-dark/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex w-full max-w-5xl items-center justify-between px-4 py-3">
+<div class="flex items-center gap-3">
+<div class="text-primary size-7">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold">YouFit</h2>
+</div>
+<div class="hidden items-center gap-8 md:flex">
+<a class="text-sm font-medium hover:text-primary" href="#como-funciona">Como Funciona</a>
+<a class="text-sm font-medium hover:text-primary" href="#categorias">Categorias</a>
+<a class="text-sm font-medium hover:text-primary" href="#sobre-nos">Sobre Nós</a>
+<a class="text-sm font-medium hover:text-primary" href="#blog">Blog</a>
+<a class="text-sm font-medium hover:text-primary" href="#depoimentos">Depoimentos</a>
+<a class="text-sm font-medium hover:text-primary" href="#junte-se">Junte-se a Nós</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-light text-sm font-bold tracking-wide hover:brightness-110">
+<span class="truncate">Entrar na Lista</span>
+</button>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center">
+<div class="flex w-full max-w-5xl flex-1 flex-col px-4">
+<section class="w-full py-10 @container md:py-20">
+<div class="flex min-h-[480px] flex-col gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-6 @[480px]:gap-8 items-center justify-center text-center md:p-10" data-alt="Desportistas felizes a fazer uma negociação ou venda de equipamento de fitness, transmitindo alegria e facilidade" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPmT_JOuWnuDKMCp67crNgrchSWFmUGCTx7A3MkFHnh54TBsuktDo0dOo73dkM0sgr4rIzRtJf5_MiHJ_gPmMJbtKH4nDcQTvbEL44b5kWGn8bp0_XdSMy7taCJgSp1OArjfGo8G2yuLVJrTOOTytSaDdteFs45uLlkvlDtLgHrcGbJnVAnmLL3FscEe6I22td3kUYVdo4LOKNQvEVJPj45EZP7yyfNm7tsa0XWFgw1RR0GwVSytl4Sgi9LLPrZZqEroQ8xU3O-RA");'>
+<div class="flex flex-col gap-4 text-center items-center">
+<h1 class="text-white text-5xl font-black leading-tight tracking-tight @[480px]:text-6xl max-w-2xl">
+                            A gente te ajuda a se manter fit!
+                        </h1>
+<p class="text-lg font-medium tracking-wide text-green-200 @[480px]:text-xl">Troque. Negocie. Economize.</p>
+<h2 class="text-gray-200 text-base font-normal leading-normal @[480px]:text-lg max-w-2xl">
+                            Compre, venda, troque e negocie equipamentos, roupas e gadgets fitness, novos e usados. A experiência de marketplace que se encaixa no seu bolso.
+                        </h2>
+</div>
+<label class="flex flex-col min-w-40 h-14 w-full max-w-lg @[480px]:h-16">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-subtle-light dark:text-subtle-dark flex border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-none text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-full placeholder:text-subtle-light dark:placeholder:text-subtle-dark pl-2 pr-2 text-sm font-normal leading-normal @[480px]:text-base" placeholder="Digite o seu e-mail" value=""/>
+<div class="flex items-center justify-center rounded-r-lg border-l-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark pr-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-background-light text-sm font-bold tracking-wide hover:brightness-110">
+<span class="truncate">Tenho Interesse</span>
+</button>
+</div>
+</div>
+</label>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16" id="como-funciona">
+<div class="flex flex-col gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">
+                        Como Funciona
+                    </h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-subtle-light dark:text-subtle-dark">
+                        Comece a comprar, vender, e trocar seus itens fitness novo e usado em apenas três passos.
+                    </p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">cloud_upload</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">Publique o seu item</h3>
+<p class="text-sm font-normal leading-normal text-subtle-light dark:text-subtle-dark">Anuncie seu equipamento com fotos e uma descrição detalhada em minutos.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">chat</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">Negocie o preço ou troque</h3>
+<p class="text-sm font-normal leading-normal text-subtle-light dark:text-subtle-dark">Converse diretamente com compradores e vendedores para chegar a um preço justo ou proponha uma troca.</p>
+</div>
+</div>
+<div class="flex flex-1 flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">handshake</span>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold">Feche negócio</h3>
+<p class="text-sm font-normal leading-normal text-subtle-light dark:text-subtle-dark">Finalize a transação de forma segura e prepare-se para usar seu novo equipamento.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16">
+<div class="flex flex-col items-center justify-center gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-8 md:p-12" data-alt="Mulher sorrindo ao receber uma notificação no seu smartphone sobre um item de fitness desejado." style='background-image: linear-gradient(to right, rgba(0, 169, 157, 0.95), rgba(0, 169, 157, 0.8)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAKC_PKZIVVGyUOh-PdkbWM-_lUdm3GjlEicRtDU1xRizLptFX70Oo5n_rlVR7CU2-V_0Td04He9NcSSW4h_dLXFPUOrc4GSI0Q_BLALlrS4wxjE-rIUwICQaG-kYVROTarnNMAUeTBr5NqxuRYpLbKrVPaN8WYHvlUNzk0TqEH07E1x-sVNIuSmmmbSp_dsWRNkAtvIRR4v7NoUoFGuUuC7_x1RQjs7gHbf1toLn-6g7I9fRNRzjDKNhu4EsO2d0Wrm8ooi4zXMqI");'>
+<div class="flex flex-col items-center text-center gap-4 text-white">
+<div class="relative size-16">
+<svg class="absolute inset-0 size-full" fill="none" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M52.5333 24.1867C52.5333 16.5867 46.56 10.6667 39.0133 10.6667C32.7467 10.6667 27.52 14.8267 26.1333 20.6933C25.92 21.6533 25.0133 22.4 24 22.4H10.6667C6.98667 22.4 4 25.3867 4 29.0667V34.9333C4 38.6133 6.98667 41.6 10.6667 41.6H24C25.0133 41.6 25.92 42.3467 26.1333 43.3067C27.52 49.1733 32.7467 53.3333 39.0133 53.3333C46.56 53.3333 52.5333 47.4133 52.5333 39.8133" fill="currentColor" opacity="0.5"></path>
+<path d="M57.6533 29.0133L49.3867 20.7467C48.6933 20.0533 47.5733 20.0533 46.88 20.7467L38.6133 29.0133C37.2267 30.4 37.92 32.8 39.7333 33.28L46.1867 34.88C47.2 35.1467 48.2667 35.1467 49.28 34.88L55.7333 33.28C57.5467 32.8 58.3467 30.4 57.6533 29.0133Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">O item que você procura, no seu radar!</h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-gray-100">Não perca mais tempo a procurar. Diga-nos o que deseja e nós avisamos quando o seu 'Match' perfeito estiver disponível, pelo melhor preço. Receba notificações personalizadas e não deixe escapar a oportunidade de encontrar o que tanto quer.</p>
+</div>
+<label class="flex flex-col min-w-40 h-14 w-full max-w-lg">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-0 bg-background-light dark:bg-background-dark focus:border-primary h-full placeholder:text-subtle-light dark:placeholder:text-subtle-dark px-4 text-sm font-normal leading-normal" placeholder="O seu e-mail para ser notificado" value=""/>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-r-lg bg-text-light px-5 text-background-light text-sm font-bold tracking-wide hover:bg-opacity-90 dark:bg-text-dark dark:text-background-dark">
+<span class="truncate">Avise-me!</span>
+</button>
+</div>
+</label>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">
+                        YouFit é para você que...
+                    </h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-subtle-light dark:text-subtle-dark">
+                        Se você se identifica com algum destes pontos, então encontrou o seu lugar. A YouFit é a comunidade perfeita para si.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">trending_up</span>
+<p class="text-base font-medium">Quer melhorar a performance no seu esporte favorito com seus produtos favoritos pelo melhor preço.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">savings</span>
+<p class="text-base font-medium">Quer começar no esporte e gastar pouco.</p>
+</div>
+<div class="flex flex-col items-center text-center gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">eco</span>
+<p class="text-base font-medium">Quer contribuir para um futuro mais sustentável, dando uma nova vida a itens fitness e participando de uma economia circular?</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16" id="sobre-nos">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">
+                        Sobre Nós
+                    </h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-subtle-light dark:text-subtle-dark">
+                        A nossa jornada para tornar o fitness mais acessível, sustentável e comunitário.
+                    </p>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:items-center lg:gap-12">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-primary">A Nossa História</h3>
+<p class="text-base font-normal text-subtle-light dark:text-subtle-dark">
+                                A YouFit nasceu da paixão de um grupo de amigos por fitness e da frustração com o alto custo e o desperdício de equipamentos. Vimos uma oportunidade de criar uma plataforma onde a comunidade pudesse se conectar, economizar e dar uma nova vida aos seus itens, tornando o estilo de vida ativo uma realidade para todos.
+                            </p>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-xl font-bold text-primary">Missão e Visão</h3>
+<p class="text-base font-normal text-subtle-light dark:text-subtle-dark">
+                                A nossa missão é clara: <span class="font-semibold text-text-light dark:text-text-dark">"A gente te ajuda a se manter fit!"</span>. Aspiramos ser o principal marketplace de fitness da comunidade, promovendo um ciclo virtuoso de economia, sustentabilidade e bem-estar, onde todos têm a chance de alcançar os seus objetivos sem barreiras financeiras.
+                            </p>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+<div class="flex flex-col gap-3 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">recycling</span>
+<h4 class="text-lg font-bold">Sustentabilidade</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Promovemos a economia circular, reduzindo o desperdício e o impacto ambiental.</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">groups</span>
+<h4 class="text-lg font-bold">Comunidade</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Construímos um espaço de confiança e colaboração entre entusiastas do fitness.</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">universal_currency_alt</span>
+<h4 class="text-lg font-bold">Acessibilidade</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Tornamos o fitness acessível a todos, independentemente do orçamento.</p>
+</div>
+<div class="flex flex-col gap-3 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<span class="material-symbols-outlined text-primary !text-4xl">favorite</span>
+<h4 class="text-lg font-bold">Paixão por Fitness</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Somos movidos pela mesma paixão que você: o amor pelo movimento e bem-estar.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16">
+<div class="flex flex-col gap-6 md:flex-row md:items-center rounded-xl border border-border-light dark:border-border-dark bg-primary/10 dark:bg-primary/5 p-8 md:p-12">
+<div class="flex flex-col gap-4 md:w-1/2">
+<span class="material-symbols-outlined !text-5xl text-primary">auto_awesome</span>
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">Encontre o que você procura com uma foto</h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-subtle-light dark:text-subtle-dark">Viu algo que gostou? Tire uma foto, e nossa IA procura quem vende ou troca por um item do seu interesse. Simples assim. Menos tempo de busca, mais tempo de treino.</p>
+</div>
+<div class="relative mt-6 md:mt-0 md:w-1/2 flex items-center justify-center p-4">
+<div class="w-full max-w-[400px] aspect-square">
+<svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" fill="url(#bgGradient)" r="48" stroke="#00a99d" stroke-opacity="0.3" stroke-width="1.5"></circle>
+<circle class="dark:fill-[#0d1f23]" cx="50" cy="50" fill="#f0f7f7" r="28"></circle>
+<g transform="translate(38 38) scale(0.5)">
+<path d="M14.22,14.22a2.33,2.33,0,0,1,0-3.3l1.82-1.82a1,1,0,0,0,0-1.42L11.83,3.47a1,1,0,0,0-1.42,0L8.59,5.29a2.33,2.33,0,0,1-3.3,0L3.47,3.47a1,1,0,0,0-1.42,0L.22,5.29a1,1,0,0,0,0,1.42l1.82,1.82a2.33,2.33,0,0,1,0,3.3L.22,13.64a1,1,0,0,0,0,1.42l1.83,1.82a1,1,0,0,0,1.42,0l1.82-1.82a2.33,2.33,0,0,1,3.3,0l1.82,1.82a1,1,0,0,0,1.42,0l1.82-1.82a1,1,0,0,0,0-1.42Zm-3.3-1.82a1,1,0,1,0-1.42-1.42A1,1,0,0,0,9.5,12.4ZM24,12a1,1,0,0,0-1-1H17.41a1,1,0,0,0-.71.29L14.88,13.1a1.2,1.2,0,0,1-1.76,0L11.29,11.29a1,1,0,0,0-1.42,0l-1.6,1.6A1,1,0,0,0,8,14v6a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1Z" fill="#00a99d" transform="translate(4 4) scale(1.5)"></path>
+</g>
+<circle cx="50" cy="50" fill="none" r="40" stroke="#00a99d" stroke-dasharray="4 8" stroke-linecap="round" stroke-width="1.5">
+<animateTransform attributeName="transform" dur="20s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"></animateTransform>
+</circle>
+<g>
+<circle class="dark:fill-[#0d1f23]" cx="10" cy="50" fill="#f0f7f7" r="6" stroke="#c0e0e5" stroke-width="1"></circle>
+<text class="material-symbols-outlined" fill="#00a99d" font-size="6" text-anchor="middle" x="10" y="52.5">swap_horiz</text>
+<animateTransform attributeName="transform" dur="20s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"></animateTransform>
+</g>
+<g>
+<circle class="dark:fill-[#0d1f23]" cx="10" cy="50" fill="#f0f7f7" r="6" stroke="#c0e0e5" stroke-width="1"></circle>
+<text class="material-symbols-outlined" fill="#00a99d" font-size="6" text-anchor="middle" x="10" y="52.5">sell</text>
+<animateTransform attributeName="transform" dur="20s" from="120 50 50" repeatCount="indefinite" to="480 50 50" type="rotate"></animateTransform>
+</g>
+<g>
+<circle class="dark:fill-[#0d1f23]" cx="10" cy="50" fill="#f0f7f7" r="6" stroke="#c0e0e5" stroke-width="1"></circle>
+<text class="material-symbols-outlined" fill="#00a99d" font-size="6" text-anchor="middle" x="10" y="52.5">add_shopping_cart</text>
+<animateTransform attributeName="transform" dur="20s" from="240 50 50" repeatCount="indefinite" to="600 50 50" type="rotate"></animateTransform>
+</g>
+<defs>
+<radialGradient cx="50%" cy="50%" fx="50%" fy="50%" id="bgGradient" r="50%">
+<stop class="dark:stop-color-primary/5" offset="0%" style="stop-color:#00a99d;stop-opacity:0.1"></stop>
+<stop class="dark:stop-color-primary/0" offset="100%" style="stop-color:#00a99d;stop-opacity:0"></stop>
+</radialGradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 -mt-4">
+<div class="flex flex-col items-center text-center p-4">
+<div class="w-full max-w-[200px] aspect-square mb-4">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g class="dark:opacity-80"><rect class="fill-[#c0e0e5] dark:fill-[#315b63]" height="80" rx="8" ry="8" width="60" x="20" y="10"></rect><rect class="fill-[#f0f7f7] dark:fill-[#0d1f23]" height="72" rx="4" ry="4" width="52" x="24" y="14"></rect><path class="fill-[#c0e0e5] dark:fill-[#315b63]" d="M42 32h16v16L48 58l-10-10z"></path><circle class="fill-[#00a99d]" cx="62" cy="78" r="10"></circle><path class="fill-white" d="M60 74h4v3h3v4h-3v3h-4v-3h-3v-4h3z"></path></g></svg>
+</div>
+<h3 class="font-bold text-lg">1. Envie uma foto</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Tire uma foto do item que deseja encontrar ou faça o upload de uma imagem da sua galeria.</p>
+</div>
+<div class="flex flex-col items-center text-center p-4">
+<div class="w-full max-w-[200px] aspect-square mb-4">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g class="dark:opacity-80"><circle class="fill-[#c0e0e5] dark:fill-[#315b63]" cx="50" cy="50" r="40"></circle><circle class="fill-[#f0f7f7] dark:fill-[#0d1f23]" cx="50" cy="50" r="36"></circle><path class="fill-[#00a99d]" d="M45 35h10v30H45z M35 45h30v10H35z"></path><path class="fill-[#467b86] dark:fill-[#b0d2d8]" d="M30 47.5h40v5H30z M47.5 30h5v40h-5z" transform="rotate(45 50 50)"></path><circle class="fill-[#00a99d]" cx="50" cy="50" r="10"></circle><circle class="fill-[#f0f7f7] dark:fill-[#0d1f23]" cx="50" cy="50" r="6"></circle></g></svg>
+</div>
+<h3 class="font-bold text-lg">2. Análise da IA</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">A nossa tecnologia de IA identifica o item, analisando características como marca, modelo e estado.</p>
+</div>
+<div class="flex flex-col items-center text-center p-4">
+<div class="w-full max-w-[200px] aspect-square mb-4">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g class="dark:opacity-80"><rect class="fill-[#c0e0e5] dark:fill-[#315b63]" height="32" rx="4" ry="4" width="40" x="30" y="10"></rect><rect class="fill-[#f0f7f7] dark:fill-[#0d1f23]" height="24" rx="2" ry="2" width="32" x="34" y="14"></rect><line class="stroke-[#c0e0e5] dark:stroke-[#315b63]" stroke-width="4" x1="50" x2="50" y1="42" y2="58"></line><rect class="fill-[#00a99d]" height="32" rx="4" ry="4" width="40" x="10" y="58"></rect><rect class="fill-[#f0f7f7] dark:fill-[#0d1f23]" height="24" rx="2" ry="2" width="32" x="14" y="62"></rect><rect class="fill-[#00a99d]" height="32" rx="4" ry="4" width="40" x="50" y="58"></rect><rect class="fill-[#f0f7f7] dark:fill-[#0d1f23]" height="24" rx="2" ry="2" width="32" x="54" y="62"></rect></g></svg>
+</div>
+<h3 class="font-bold text-lg">3. Receba Sugestões</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Receba uma lista de itens idênticos ou similares para compra ou troca, conectando você a outros utilizadores.</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">
+                        A sua melhor performance, pelo melhor preço ou troca.
+                    </h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-subtle-light dark:text-subtle-dark">Na YouFit, você encontra variedade e poder de negociação para economizar de verdade ou encontrar o item perfeito para uma troca.</p>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+<div class="flex flex-col justify-center gap-4 rounded-xl bg-background-light dark:bg-background-dark/50 p-8 border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary !text-4xl">sell</span>
+<h3 class="text-xl font-bold">Poder de Barganha na sua mão</h3>
+<p class="text-sm font-normal text-subtle-light dark:text-subtle-dark">Cansado de preços fixos? Aqui, você negocia diretamente com o vendedor para conseguir o melhor negócio possível. Preços justos para quem vende, oportunidades incríveis para quem compra.</p>
+</div>
+<div class="flex flex-col justify-center gap-4 rounded-xl bg-background-light dark:bg-background-dark/50 p-8 border border-border-light dark:border-border-dark">
+<span class="material-symbols-outlined text-primary !text-4xl">inventory_2</span>
+<h3 class="text-xl font-bold">Novos &amp; Usados: Um Universo de Opções</h3>
+<p class="text-sm font-normal text-subtle-light dark:text-subtle-dark">Explore uma vasta gama de produtos, desde os últimos lançamentos até itens usados em excelente estado. A sua chance de encontrar aquele equipamento dos sonhos ou desapegar do que não usa mais.</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">Dê um Match nos seus Itens Fitness</h2>
+<p class="text-base font-normal leading-normal max-w-3xl text-subtle-light dark:text-subtle-dark">Cansou de um equipamento? Troque por algo que você realmente vai usar. Encontre o match perfeito e renove seu treino sem gastar mais por isso.</p>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+<div class="flex flex-col justify-center gap-4 rounded-xl border border-border-light bg-background-light/50 p-8 dark:bg-background-dark/50"><span class="material-symbols-outlined !text-4xl text-primary">swap_horiz</span>
+<h3 class="text-xl font-bold">Trocas Inteligentes e Comunidade</h3>
+<p class="text-sm font-normal text-subtle-light dark:text-subtle-dark">Nossa plataforma facilita a troca de itens entre membros da comunidade. Cadastre seus equipamentos e descubra o que outros usuários estão oferecendo. É a forma mais sustentável e econômica de se manter equipado.</p>
+</div>
+<div class="flex flex-col justify-center gap-4 rounded-xl border border-border-light bg-background-light/50 p-8 dark:bg-background-dark/50"><span class="material-symbols-outlined !text-4xl text-primary">groups</span>
+<h3 class="text-xl font-bold">Faça Parte de Algo Maior</h3>
+<p class="text-sm font-normal text-subtle-light dark:text-subtle-dark">Ao trocar, você não só renova seus equipamentos, mas também fortalece a comunidade YouFit. Conecte-se com outros entusiastas, compartilhe experiências e ajude a construir um ecossistema fitness mais colaborativo.</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16" id="categorias">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">
+                        Explore o que te espera
+                    </h2>
+<p class="text-base font-normal leading-normal max-w-2xl text-subtle-light dark:text-subtle-dark">
+                        De roupas de alta performance e gadgets de ponta a equipamentos robustos, encontre tudo o que precisa para superar os seus limites.
+                    </p>
+</div>
+<div class="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-6">
+<div class="group flex cursor-pointer flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-4 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden rounded-lg aspect-square">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Tênis de corrida da marca Hoka em close-up, destacando o design e a textura" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNU-ltmQdmSwuS-DmeAxaVy0XLpvVxVuzaUpNEiK9BHEW7-CWffil7WgfP196o8p5cU0fPpoRDiFtk7MOzaIz3CVvX5DWMvlkgAhNGPwKfpYvXmENaBFpLsL9JnijulztGPevVeDP6o7dlI8wwc0hbOXvRUlOepoyvyEOBLug_rPR8nKBD9fini9WYlEd9Q5IwgSPpIpRuiGMP9YhEpkSRPMxmM478CuX-MaDIH5KqLGi-zl1SBNrrpO0FUDqxsjpcxWkh6dHDHE"/>
+<div class="absolute top-2 left-2 rounded-full bg-primary/80 px-3 py-1 text-xs font-bold text-background-light backdrop-blur-sm">Novo</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold">Tenis Hoka</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Preço: <span class="font-semibold text-text-light dark:text-text-dark">R$ 250,00</span></p>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary/20 dark:bg-primary/10 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary/30 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined !text-xl">local_offer</span>
+                            Fazer Oferta
+                        </button>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-4 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden rounded-lg aspect-square">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Um smartwatch Garmin em um pulso mostrando dados de fitness" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJd8MJD9ZydYa6TLJY3i7BNMCD8nL09TjUJYl9npNyMst603r8OsSudIwD8WsCroD_qRx0jyMFjVSzMCB0HnF-Nv-mCB3vJqbIWTBn8CWHxSy8LF9oicXThUbgq0rGyBwtXW-PFpJwaYFRZVrnrKxu0nrs3sbEv2OiGsUczGJrFAtr5ZbH7x_EbM2Q1Mv1Fgj-CjaE7aGyDZAaKp8vvKZwRWRxD660y62ORn53KaeiOnnUX_m2_5tbQVZhm25qHQZtMTA5s01zrFo"/>
+<div class="absolute top-2 left-2 rounded-full bg-background-light/80 dark:bg-background-dark/80 px-3 py-1 text-xs font-bold backdrop-blur-sm">Usado</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold">Relógios Garmin</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Preço: <span class="font-semibold text-text-light dark:text-text-dark">R$ 1.200,00</span></p>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary/20 dark:bg-primary/10 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary/30 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined !text-xl">local_offer</span>
+                            Fazer Oferta
+                        </button>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-4 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden rounded-lg aspect-square">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Tênis de corrida Olympikus em close-up, destacando o design e a textura" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8nmtEV2HJ9FAAB8BWrsul_OOvfpGF5EmHVxF9iLKMydkjXzaHpzdQwbW3Qa9PbgoxuHSxUjYiiFH9TFfpx81qFT6z2lfxuDvQlCLDAsiIGGbz_vzCVDQP2Px3fBV9JwijSaARNb9ADKRdYOJhFE1MdImpuV2LApm-dQDp7gYH5EMgdpNelcanLiV38QbJ03sAX-ncDGCpOd5VUXYFhWaTbE7EeAULzj-_ttJYrrx6bgAqE5BZyxUe1NY0rbDTeECttnAawCI9m10"/>
+<div class="absolute top-2 left-2 rounded-full bg-primary/80 px-3 py-1 text-xs font-bold text-background-light backdrop-blur-sm">Novo</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold">Tênis Olympikus</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Preço: <span class="font-semibold text-text-light dark:text-text-dark">R$ 450,00</span></p>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary/20 dark:bg-primary/10 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary/30 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined !text-xl">local_offer</span>
+                            Fazer Oferta
+                        </button>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col gap-4 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-4 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden rounded-lg aspect-square">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Uma bicicleta de estrada moderna e elegante em exibição" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmpFnDUBhVZAy35k6FuRNcuowRxlPlb2AqyWWn_KOMSOJdkmEomCQ_19vbfOAWo-yuLuHWOCqydfLnIC-MKf977XgjiZIlXu2nmrv8xBZdIzKpPhUyGk9vuvbWH7eMCwhJHXHxK_V4fgpviunCOCvfikPaGnvEWQhcflje0lux91yp6gkoievNlR8St1mGdzKS8j0YX23IL5oXuF-tP4al_XfGlxQIQqVTQELHwCG7f78Vx5_vzsFMuIp_kChQeHiRSglqYWfQSb8"/>
+<div class="absolute top-2 left-2 rounded-full bg-background-light/80 dark:bg-background-dark/80 px-3 py-1 text-xs font-bold backdrop-blur-sm">Usado</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="font-bold">Bicicletas</h4>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Preço: <span class="font-semibold text-text-light dark:text-text-dark">R$ 3.500,00</span></p>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-primary/20 dark:bg-primary/10 py-2 text-sm font-bold text-primary transition-colors hover:bg-primary/30 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined !text-xl">local_offer</span>
+                            Fazer Oferta
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">
+                        Marcas Destaque
+                    </h2>
+<p class="text-base font-normal leading-normal max-w-2xl text-subtle-light dark:text-subtle-dark">
+                        Trabalhamos com as marcas mais confiáveis do mercado para garantir a qualidade e performance que você merece.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4 sm:grid-cols-4 md:gap-6">
+<div class="flex items-center justify-center rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 p-6 aspect-[3/2] sm:aspect-auto sm:h-28">
+<p class="text-2xl font-bold text-subtle-light dark:text-subtle-dark">HOKA</p>
+</div>
+<div class="flex items-center justify-center rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 p-6 aspect-[3/2] sm:aspect-auto sm:h-28">
+<p class="text-2xl font-bold text-subtle-light dark:text-subtle-dark">GARMIN</p>
+</div>
+<div class="flex items-center justify-center rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 p-6 aspect-[3/2] sm:aspect-auto sm:h-28">
+<p class="text-2xl font-bold text-subtle-light dark:text-subtle-dark">Olympikus</p>
+</div>
+<div class="flex items-center justify-center rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 p-6 aspect-[3/2] sm:aspect-auto sm:h-28">
+<p class="text-2xl font-bold text-subtle-light dark:text-subtle-dark">SPECIALIZED</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16" id="blog">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">Direto do nosso Blog</h2>
+<p class="text-base font-normal leading-normal max-w-2xl text-subtle-light dark:text-subtle-dark">Fique por dentro das últimas dicas de fitness, guias de treino, nutrição e novidades do marketplace YouFit.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden aspect-[16/9]">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Pessoa se alongando antes de um treino" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAioxQrz7vPc8xjVD1Revdmckxo5UlXHg0B4eG0WEA88uyvLBitu9-xmsE1aqcxJRVJO74Z5TtrKaekzLkZClg2ZfZIqgN-oQyZX0dz5ZcR-H98wcSbf7WLwrrt61oMbD5PdoHnQXv-5ZTc0JyZOYP6Xse71TrUiF8-iK6bq9BKczhj9hek_jqhKDp1ZEUtkhkb92fRjgXZxvjaKcsShmGc2mY73zxY4AGEeVgaRcKm49QSa7pmTAMQCA6g_k3aqBy4JtLmZE7ZioY"/>
+</div>
+<div class="flex flex-col gap-2 p-4 pt-0">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary">Guias de Treino</p>
+<h3 class="font-bold">A importância do aquecimento: como preparar seu corpo para o treino</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Entenda por que o aquecimento é crucial para evitar lesões e maximizar seus resultados. Incluímos uma rotina rápida para você seguir.</p>
+<a class="mt-2 flex items-center gap-1 text-sm font-bold text-primary" href="#">Leia mais <span class="material-symbols-outlined !text-base transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden aspect-[16/9]">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Prato colorido com alimentos saudáveis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYdoUVGP3BPIzxJzO-puyvCx_NBzg7OMxk92h192C9SF-2HOCyOXs2GaKDCk-Oi1Ln3jD-M-QGKIuYQdSHEo1YDCZkIX73cPtLZkU9qpOYooUAATi0EA3_2Ssefv0oAVhqQq7niWPuSOpGU2qAvKUvNLLquMeXmwLTIgKoLaCELKxSyVrIpt7NG87-qt5HsIRzT7ufF4uMNm2WK-JRhvLp632W0CZR7yYjQ1mm_4XvE4w0QzXFKngMFqKeNF8z7N43h9ug2U6dEl8"/>
+</div>
+<div class="flex flex-col gap-2 p-4 pt-0">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary">Nutrição</p>
+<h3 class="font-bold">5 snacks pós-treino para acelerar a recuperação muscular</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Descubra opções deliciosas e nutritivas para repor as energias e ajudar seus músculos a se recuperarem após o exercício.</p>
+<a class="mt-2 flex items-center gap-1 text-sm font-bold text-primary" href="#">Leia mais <span class="material-symbols-outlined !text-base transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+</div>
+</div>
+<div class="group flex cursor-pointer flex-col gap-4 overflow-hidden rounded-xl border border-border-light bg-background-light/50 dark:border-border-dark dark:bg-background-dark/50 transition-all hover:shadow-lg">
+<div class="relative w-full overflow-hidden aspect-[16/9]">
+<img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Pessoa usando o aplicativo YouFit em um smartphone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKC_PKZIVVGyUOh-PdkbWM-_lUdm3GjlEicRtDU1xRizLptFX70Oo5n_rlVR7CU2-V_0Td04He9NcSSW4h_dLXFPUOrc4GSI0Q_BLALlrS4wxjE-rIUwICQaG-kYVROTarnNMAUeTBr5NqxuRYpLbKrVPaN8WYHvlUNzk0TqEH07E1x-sVNIuSmmmbSp_dsWRNkAtvIRR4v7NoUoFGuUuC7_x1RQjs7gHbf1toLn-6g7I9fRNRzjDKNhu4EsO2d0Wrm8ooi4zXMqI"/>
+</div>
+<div class="flex flex-col gap-2 p-4 pt-0">
+<p class="text-xs font-semibold uppercase tracking-wider text-primary">Novidades YouFit</p>
+<h3 class="font-bold">Prepare-se: A Lista de Desejos (Wishlist) está chegando!</h3>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Em breve, você poderá salvar seus itens favoritos para não perder nenhuma oportunidade. Fique de olho nas atualizações!</p>
+<a class="mt-2 flex items-center gap-1 text-sm font-bold text-primary" href="#">Leia mais <span class="material-symbols-outlined !text-base transition-transform group-hover:translate-x-1">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10 py-10 @container md:py-16" id="depoimentos">
+<div class="flex flex-col items-center text-center gap-4">
+<h2 class="text-3xl font-bold tracking-tight @[480px]:text-4xl max-w-3xl">O que nossos usuários dizem</h2>
+<p class="text-base font-normal leading-normal max-w-2xl text-subtle-light dark:text-subtle-dark">A satisfação da nossa comunidade é o que nos move.</p>
+</div>
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+<div class="flex flex-col gap-6 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Foto de perfil de Ana Silva" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF__66av0PHTrj0bn5m7vDRw3ZqmS1YcL8LA2MFAXWafbu52_AaaKV7isY9IAJmo-Sdo_wy5ILjy0mUl_vG1RjO_D8Fvj3FgfFnvXCKL3hw25y1XHVXbxRi11zGruzStq9V7LxvasoVShFPJWLUj2UOrZEiA4ZLUMGbMcZ-O00RcOvGRoock6azRWmGRmHAcaT8yawMDLpzp4uMfRrSP9T5WnK4JkLRAtH_q1UvZhrLEn51QFesOjfAR2_CDb0DTbIPFE6_Ye4Mvk"/>
+<div>
+<p class="font-bold">Ana Silva</p>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Corredora Amadora</p>
+</div>
+</div>
+<p class="text-subtle-light dark:text-subtle-dark">"Consegui negociar o preço de um relógio esportivo que queria há tempos! A plataforma é super intuitiva e segura. Recomendo demais."</p>
+</div>
+<div class="flex flex-col gap-6 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6">
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Foto de perfil de Bruno Costa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK15YO8jM9ouNMSa_Ae8zCKniAExMOxKaviYBCCjFp_LnhIVdCwLJH6BahQ0vPrInmlURszLfxQbiF7tUrnRj3KmjV4W2gIRKVirkRk8clOhP8KuYl_xyAZiF-VmPcUM0EkrWE1b13hCzK4L6nz3wMnqiRIN20H9ilMLgMOwCBOrkAEVdniXF7SZHlF3FeuWE6KK0lDzQpSjKj7fB5xvU3UI-JBDNpTY7WEALxCoHsJFviJT3996vSNo28rp2VsV5KgyIXvkBoQtU"/>
+<div>
+<p class="font-bold">Bruno Costa</p>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Ciclista</p>
+</div>
+</div>
+<p class="text-subtle-light dark:text-subtle-dark">"Troquei minha bike antiga por uma mais nova e adequada ao meu nível. A funcionalidade de troca é fantástica e a comunidade é muito ativa."</p>
+</div>
+<div class="flex flex-col gap-6 rounded-xl border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark/50 p-6 md:col-span-2 lg:col-span-1">
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Foto de perfil de Carla Mendes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu_pXlkFMIO8wOQZVlKTvqHhhaU9vobtBhdeS2rJrfUjsu8Y9Cx-2Sgo98mRYC5S0wxGi7zCjvtqgejtLTZhtUFYYK2P4zyfHfF4jRMy4TDl7x9rxGTr52bFGSg4xLOMcqV57Vs3fWiQ5Z-CUhTgMnNtJVsI6K8kSbP3GRZ1ZkiLDTGKh1u8m8jcivpEsSKdsVuRD9yMq_-x-Ycp8sYPpKHeB-HSF2s0d4j6nMJCicaMJi9CTfIuIWusgajh5C1T1OL4BzkcEwIHk"/>
+<div>
+<p class="font-bold">Carla Mendes</p>
+<p class="text-sm text-subtle-light dark:text-subtle-dark">Entusiasta de Yoga</p>
+</div>
+</div>
+<p class="text-subtle-light dark:text-subtle-dark">"A experiência na YouFit foi excelente. Encontrei roupas de alta qualidade por um preço justo e a negociação foi super tranquila. Amei!"</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-6 items-center text-center bg-primary/20 dark:bg-primary/10 rounded-xl my-10 p-8 md:my-16 md:p-12" id="junte-se">
+<h2 class="text-3xl font-bold tracking-tight max-w-2xl">
+                    Pronto para encontrar, vender ou trocar seu próximo equipamento?
+                </h2>
+<p class="text-base font-normal max-w-xl text-subtle-light dark:text-subtle-dark">
+                    Seja o primeiro a saber do lançamento da YouFit. Inscreva-se para receber acesso antecipado e ofertas exclusivas.
+                </p>
+<label class="flex flex-col min-w-40 h-14 w-full max-w-lg">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary h-full placeholder:text-subtle-light dark:placeholder:text-subtle-dark px-4 text-sm font-normal leading-normal" placeholder="O seu melhor e-mail" value=""/>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-r-lg bg-primary px-5 text-background-light text-sm font-bold tracking-wide hover:brightness-110">
+<span class="truncate">Quero entrar!</span>
+</button>
+</div>
+</label>
+</section>
+</div>
+</main>
+<footer class="flex justify-center border-t border-border-light dark:border-border-dark">
+<div class="flex w-full max-w-5xl flex-col items-center justify-between gap-4 px-4 py-8 sm:flex-row">
+<div class="text-sm text-subtle-light dark:text-subtle-dark">© 2024 YouFit. Todos os direitos reservados.</div>
+<div class="flex items-center gap-4 text-subtle-light dark:text-subtle-dark">
+<a class="hover:text-primary" href="#">Termos de Serviço</a>
+<a class="hover:text-primary" href="#">Política de Privacidade</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
